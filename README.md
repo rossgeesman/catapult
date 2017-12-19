@@ -9,7 +9,7 @@ Uses Ruby 2.4.1 and Rails 5.1.4.
 3. Run tests with `rspec spec`
 
 ## Use
-Start server `rails s`. Send a request to create a new breed
+Start server `rails s`. Use an HTTP client like curl to send a request to create a new breed liek so:
 ```
 curl -X POST http://0.0.0.0:3000/breeds -H 'content-type: application/json' -d '{"breed": {"name": "Kitty"}}'
 ```
@@ -23,6 +23,48 @@ You should receive a response code 201 and a response with the newly created Bre
     "updated_at": "2017-12-19T08:11:21.506Z",
     "tags": []
 }
+```
+
+Other endpoints
+
+### Breed
+```
+POST /breeds
+- create new breed
+
+GET /breeds
+- retuns all breeds
+
+GET /breeds/:breed_id
+- returns the breed and all the tags belonging to it
+
+PATCH /breeds/:breed_id
+- Updates the breed and it's tags 
+
+DELETE /breeds/:breed_id
+- Removes the breed
+```
+
+### Tag
+```
+GET /breeds/:id/tags
+- Gets tags on a breed
+
+POST /breeds/:id/tags
+- Replaces tags on a breed
+
+GET /tags
+- returns all tags in the system
+
+GET /tags/:id
+- returns a tag
+
+PATCH /tags/:id
+- updates a tag
+
+DELETE /tags/:id
+- deletes the tag and all associations to breeds
+
 ```
 
 ## Explanation
