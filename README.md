@@ -25,7 +25,7 @@ You should receive a response code 201 and a response with the newly created Bre
 }
 ```
 
-Other endpoints
+Other endpoints follow this schema:
 
 ### Breed
 ```
@@ -75,4 +75,6 @@ The assigment specified to make sure that when a breed is deleted, the correspon
 ## Improvements
 Both the BreedsController and TagsController have a stats action. If I had more time, I would have DRYed this up by adding a seperate StatsController to handle serving up stats for both Tags and Breeds.
 
-I also should have cleaned up tests by using a library like FactoryGirl to make creation of future test fixtures less messy.
+Additionally, I would like to set up ActiveModel::Serializer for formatting JSON responses rather than doing it directly in controller methods.
+
+Tests could be cleaned up further by using a library like FactoryGirl to make creation of future test fixtures less messy.
